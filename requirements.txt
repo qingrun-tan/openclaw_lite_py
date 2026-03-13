@@ -1,2 +1,15 @@
+# 核心依赖
 python-dotenv==1.0.0
 requests==2.31.0
+
+# Web API
+fastapi>=0.104.0
+uvicorn>=0.24.0
+pydantic>=2.5.0
+
+# 测试（开发环境）
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+
+# 可选：Redis 支持（生产环境）
+# redis>=5.0.0

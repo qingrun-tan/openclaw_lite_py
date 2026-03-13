@@ -463,3 +463,47 @@ requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='ark.cn-beijing.volces
 {"time": "2026-03-12 17:19:03,097", "level": "INFO", "msg": "正在请求模型 kimi-k2.5，消息数: 4"}
 {"time": "2026-03-12 17:19:20,893", "level": "INFO", "msg": "模型调用成功，消耗Token: 442"}
 {"time": "2026-03-12 17:19:20,895", "level": "INFO", "msg": "Agent决策: {'thought': '用户请求读取指定路径的文件内容。我需要使用 readfileskill 工具来读取 E:\\openclaw_lite\\src\\data\\sandbox\\test.text 文件。', 'action_type': 'readfileskill', 'params': {'file_path': 'E:\\openclaw_lite\\src\\data\\sandbox\\test.text'}}"}
+{"time": "2026-03-12 17:38:55,303", "level": "INFO", "msg": "技能已注册: echoskill -> 回显消息，用于测试"}
+{"time": "2026-03-12 17:38:55,304", "level": "INFO", "msg": "技能已注册: readfileskill -> 读取指定路径的文件内容"}
+{"time": "2026-03-12 17:38:55,305", "level": "INFO", "msg": "技能已注册: runcommandskill -> 执行系统命令（高风险，需白名单）"}
+{"time": "2026-03-12 17:38:55,306", "level": "INFO", "msg": "OpenClaw Lite 正在启动..."}
+{"time": "2026-03-12 17:38:55,307", "level": "INFO", "msg": "系统就绪。ReAct 循环已启动。"}
+{"time": "2026-03-12 17:39:05,704", "level": "INFO", "msg": "收到任务: 查看当前目录下有什么文件，然后读取 te..."}
+{"time": "2026-03-12 17:39:05,812", "level": "INFO", "msg": "正在请求模型 kimi-k2.5，消息数: 2"}
+{"time": "2026-03-12 17:39:27,344", "level": "INFO", "msg": "模型调用成功，消耗Token: 320"}
+{"time": "2026-03-12 17:39:27,346", "level": "INFO", "msg": "Agent原始决策: {"action_type": "runcommandskill", "params": {"command": "ls -la"}, "thought": "用户想查看当前目录的文件，我需要先执行ls命令列出文件列表，然后再读取test.txt"}"}
+{"time": "2026-03-12 17:41:06,018", "level": "INFO", "msg": "收到任务: 当前系统是windows系统，请帮我查看..."}
+{"time": "2026-03-12 17:41:06,125", "level": "INFO", "msg": "正在请求模型 kimi-k2.5，消息数: 3"}
+{"time": "2026-03-12 17:41:07,594", "level": "ERROR", "msg": "API请求失败: 400 - {"error":{"code":"InvalidParameter","message":"'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'. Request id: 021773308466372c4dc4b915535437ad03877d2dfc54a038d02fd","param":"","type":"BadRequest"}}"}
+{"time": "2026-03-12 17:41:09,309", "level": "ERROR", "msg": "API请求失败: 400 - {"error":{"code":"InvalidParameter","message":"'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'. Request id: 0217733084688297b2c08adb457386e4dc9fc8de61d86c7ff3cb3","param":"","type":"BadRequest"}}"}
+{"time": "2026-03-12 17:41:12,077", "level": "ERROR", "msg": "API请求失败: 400 - {"error":{"code":"InvalidParameter","message":"'messages' must contain the word 'json' in some form, to use 'response_format' of type 'json_object'. Request id: 021773308471581b9f1f8d82739748c57f1ca9984b4fb5e6578b4","param":"","type":"BadRequest"}}"}
+{"time": "2026-03-12 17:41:12,077", "level": "ERROR", "msg": "Agent运行失败: API调用重试3次后仍失败: 400 Client Error: Bad Request for url: https://ark.cn-beijing.volces.com/api/coding/v3/chat/completions"}
+Traceback (most recent call last):
+  File "E:\openclaw_lite\src\agent\llm_client.py", line 75, in chat
+    response.raise_for_status()  # 如果状态码不是200，抛出HTTPError
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\miniconda\Lib\site-packages\requests\models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://ark.cn-beijing.volces.com/api/coding/v3/chat/completions
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\openclaw_lite\src\agent\engine.py", line 67, in run
+    llm_resp = self.llm_client.chat(history)
+  File "E:\openclaw_lite\src\agent\llm_client.py", line 103, in chat
+    raise Exception(f"API调用重试{retry_count}次后仍失败: {str(e)}")
+Exception: API调用重试3次后仍失败: 400 Client Error: Bad Request for url: https://ark.cn-beijing.volces.com/api/coding/v3/chat/completions
+{"time": "2026-03-12 17:41:30,240", "level": "INFO", "msg": "技能已注册: echoskill -> 回显消息，用于测试"}
+{"time": "2026-03-12 17:41:30,240", "level": "INFO", "msg": "技能已注册: readfileskill -> 读取指定路径的文件内容"}
+{"time": "2026-03-12 17:41:30,240", "level": "INFO", "msg": "技能已注册: runcommandskill -> 执行系统命令（高风险，需白名单）"}
+{"time": "2026-03-12 17:41:30,241", "level": "INFO", "msg": "OpenClaw Lite 正在启动..."}
+{"time": "2026-03-12 17:41:30,242", "level": "INFO", "msg": "系统就绪。ReAct 循环已启动。"}
+{"time": "2026-03-12 17:41:51,701", "level": "INFO", "msg": "收到任务: 当前系统是windows系统，请帮我查看..."}
+{"time": "2026-03-12 17:41:51,811", "level": "INFO", "msg": "正在请求模型 kimi-k2.5，消息数: 2"}
+{"time": "2026-03-12 17:42:13,202", "level": "INFO", "msg": "模型调用成功，消耗Token: 261"}
+{"time": "2026-03-12 17:42:13,203", "level": "INFO", "msg": "Agent原始决策: {"action_type": "runcommandskill", "params": {"command": "dir"}, "thought": "用户想查看Windows系统当前目录的文件列表，需要使用dir命令"}"}
+{"time": "2026-03-12 17:43:54,850", "level": "INFO", "msg": "收到任务: 再帮我看下当前目录下的data目录下的s..."}
+{"time": "2026-03-12 17:43:54,955", "level": "INFO", "msg": "正在请求模型 kimi-k2.5，消息数: 4"}
+{"time": "2026-03-12 17:44:17,492", "level": "INFO", "msg": "模型调用成功，消耗Token: 354"}
+{"time": "2026-03-12 17:44:17,494", "level": "INFO", "msg": "Agent原始决策: {"action_type": "readfileskill", "params": {"file_path": "data\\sandbox\\test.text"}, "thought": "用户想查看当前目录下data\\sandbox\\test.text文件的内容，需要使用readfileskill读取文件"}"}

@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# 环境变量
+.env
+
+# IDE
+.idea
+.vscode
+*.swp
+
+# 测试
+tests
+*.pytest_cache
+
+# 文档
+README.md
+LICENSE
+
+# 临时文件
+*.tmp
+.DS_Store
+
+# 已存在的数据和日志目录（运行时挂载）
+data
+logs

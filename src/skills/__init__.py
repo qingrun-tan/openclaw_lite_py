@@ -1,5 +1,7 @@
-# src/skills/__init__.py
-from .manager import SkillManager
+"""
+Skills 层 - 技能管理器统一导入
+"""
+from .manager import SkillManager, skill
 from .base import BaseSkill
 
-__all__ = ['SkillManager', 'BaseSkill']
+__all__ = ['SkillManager', 'BaseSkill', 'skill']

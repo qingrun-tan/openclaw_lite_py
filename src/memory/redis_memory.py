@@ -4,7 +4,7 @@ import json
 from typing import List
 from .base import BaseMemory
 from src.agent.llm_client import Message
-
+from ..logger import logger
 
 # import redis # 实际使用时取消注释
 
